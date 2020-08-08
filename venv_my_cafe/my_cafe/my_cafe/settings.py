@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django.apps.MainConfig',
+    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,42 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# ロギング設定
+LOGGING = {
+    'version': 1,
+    'disable_existing_logers': False,
+
+    # ロガーの設定
+    'loggers': {
+        # Djangoが利用するロガー
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        # mainアプリケーションが利用するロガー
+        'main': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        }
+    },
+    # ハンドラの設定
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'dev'
+        },
+    },
+    # フォーマッタの設定
+    'formatters': {
+        'dev': {
+            'format': '\t'.join([
+                '%(asctime)s',
+                '[%(levelname)s]',
+                '%(pathname)s(Line:%(lineno)d)',
+                '%(message)s'
+            ])
+        }
+    }
+}
