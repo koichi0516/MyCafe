@@ -1,10 +1,32 @@
 <!DOCTYPE html>
+
+{% load static %}
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>トップページ</title>
+    <title>My Cafe</title>
+    <meta name="description" content="テスト">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet"> -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <h1>Hello World!</h1>
+    <div id="home" class="big-bg">
+    <header class="page-header wrapper">
+        
+    </header>
+
+    <div class="home-content wrapper">
+        <h2 class="page-title">メインタイトル</h2>
+        <p>サブタイトル</p>
+        <a class="button" href="menu.html">ボタン</a>
+    </div> <!-- /.home-content -->
+    </div><!-- /#home -->
 </body>
 </html>
