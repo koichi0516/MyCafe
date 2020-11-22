@@ -28,39 +28,214 @@ img {
     max-width: 100%;
 }
 
+h1 {
+    padding-top: 50px;
+    font-size: 30px;
+    color: #73A776;
+    text-align: center;
+}
+
+hr {
+    border-width: 1px 0px 0px 0px; /* 太さ1px */
+    border-color: gray;   /* 線色を灰色に */
+    height: 1px;
+    width: 50px;
+}
+
 /* HEADER
 ------------------------------- */
-.logo {
-    width: 210px;
-    margin-top: 14px;
+header {
+    background-color:#fff;
+    text-align: center;
+}
+.page-header {
+    display: flex;
+}
+.wrapper {
+    margin: 0 auto;
+    padding: 0 auto;
 }
 
 .main-nav {
     display: flex;
-    font-size: 1.25rem;
+    font-size: 16px;
+    height:70px;
+    width:100%;
     text-transform: uppercase;
-    margin-top: 34px;
     list-style: none;
+    align-items: center;
+    margin:0 auto;
 }
 .main-nav li {
-    margin-left: 36px;
+    height: 100%;
+    margin:0 10px;
+    padding: 10px;
+    color:#000;
+    text-decoration:none;
+    letter-spacing:.1em;
 }
 .main-nav a {
     color: #432;
 }
 .main-nav a:hover {
-    color: #0bd;
+    color: #73A776;
+}
+.main-nav li p{
+    color: #73A776;
+    font-size: 12px;
 }
 
-.page-header {
+.logo {
+    width: 210px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+ .logo img{
+    width:100%;
+    height:auto;
+  }
+
+.onlineshop-button{
+    height: 100%;
+    padding: 20px;
+    background-color: #73A776;
+}
+
+.contents-frame {
+    background-attachment: fixed;
+    background-image: url(../img/test-footer-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 280px;
+    width: 100%;
+}
+
+.contents-frame::before {
+    background: inherit;
+    content: '';
+    filter: blur(5px);
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+}
+
+.onlineshop-button a{
+    color: white;
+}
+.onlineshop-button a:hover {
+    color: #0b6332;
+}
+
+
+/* FOOTER
+------------------------------- */
+footer {
+    /* background: #432; */
+    text-align: center;
+    padding: 0;
+    color: #fff;
+}
+
+footer p {
+    /* color: #fff; */
+    font-size: 0.875rem;
+}
+
+.onlineshop-section {
+    height: 280px;
+    background-color: #73A776;
+    background-position: bottom;
+}
+
+.footer-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    list-style: none;
+}
+.footer-nav li {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.footer-nav a {
+    color: #fff;
 }
 
-.wrapper {
-    max-width: 1100px;
+
+.main-nav-main-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.main-nav-sub-text {
+    font-size: 12px;
+    color: #73A776;
+}
+
+
+.main-nav-onlineshop-link {
+    background-color: #73A776;
+}
+
+.footer-link {
+    height: 190px;
+    background-color: #4C524C;
+}
+
+/* BASE
+------------------------------- */
+
+.page-title {
+    height: 180px;
+    font-size: 3rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    font-weight: normal;
+    background-color: #F0F5F0;
+}
+
+.eyecatch-image {
+    background-color: #ddd;
+    background-image: url(../img/menu-bg.jpg);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.title-border:before,
+.title-border:after {
+    border-top: 1px solid;
+    content: "";
+    flex-grow: 0.08;
+}
+.title-border:before {
+    margin-right: 1rem;
+}
+.title-border:after {
+    margin-left: 1rem;
+}
+
+.section-title {
+    font-size: 30px;
+    color: #73A776;
     margin: 0 auto;
-    padding: 0 4%;
+}
+
+.explain-text {
+    text-align: center;
 }
 
 /* HOME
@@ -74,23 +249,77 @@ img {
     margin: 10px 0 42px;
 }
 
-/* 見出し */
-.page-title {
-    font-size: 5rem;
-    font-family: 'Philosopher', serif;
-    text-transform: uppercase;
-    font-weight: normal;
+#home-about {
+    background-color: #FDF7F3;
 }
+
+#home-about .r {
+    margin: 20px 0;
+}
+
+.title {
+    background-color: #F0F5F0;
+}
+
+.h3-border {
+    width: 15%;
+    border: solid 0.5px;
+    border-color: gray;
+    margin-bottom: 20px;
+}
+
+
+
 /* ボタン */
 .button {
+    /* display: flex; */
+
+    width: 200px;
+    height: 50px;
     font-size: 1.375rem;
-    background: #0bd;
-    color: #fff;
+
+    text-align: center;
+
+    padding: 10px 34px;
+    margin: 20px auto;
+
+    border: 1px solid;
+    border-color: black;
     border-radius: 5px;
-    padding: 18px 32px;
+    background: #fff;
+    color: #333333;
+
 }
 .button:hover {
-    background: #0090aa;
+    background: #F0F5F0;
+}
+
+.button-area {
+    width: 100%;
+    height: 100px;
+    text-align: center;  /* 左右に各20pxの余白が設けられます。 */
+  }
+
+.btn-border {
+    display: inline-block;
+    max-width: 180px;
+    text-align: left;
+    border: 2px solid #73A776;
+    font-size: 16px;
+    color: #73A776;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin:16px auto;
+    border-radius: 4px;
+    background: #fff;
+    transition: .4s;
+}
+  
+.btn-border:hover {
+    background-color: #73A776;
+    border-color: #cbe585;
+    color: #FFF;
 }
 
 /* 大きな背景画像 */
@@ -327,19 +556,53 @@ iframe {
     width: 30%;
 }
 
-/* フッター
-------------------------------- */
-footer {
-    background: #432;
-    text-align: center;
-    padding: 26px 0;
-}
 
-footer p {
-    color: #fff;
-    font-size: 0.875rem;
+/*flex*/
+.r{
+    display: flex;
+    justify-content: space-around;
 }
-
+.col-1{
+    width: 8.33%;
+}
+.col-2{
+    width: 16.66%;
+}
+.col-3{
+    width: 25%;
+}
+.col-4{
+    width: 33.33%;
+}
+.col-5{
+    width: 41.66%;
+}
+.col-6{
+    width: 50%;
+}
+.col-7{
+    width: 58.33%;
+}
+.col-8{
+    width: 66.66%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.33%;
+}
+.col-11{
+    width: 91.66%;
+}
+.col-12{
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    [class*="col-"]{
+        width: 100%;
+    }
+}
 
 
 
@@ -454,3 +717,9 @@ footer p {
         margin-bottom: 30px;
     }
 }
+
+
+
+  
+ 
+ 

@@ -7,8 +7,14 @@ class IndexView(generic.TemplateView):
 class NewsView(generic.TemplateView):
     template_name = "news.html"
 
-class MenuView(generic.TemplateView):
-    template_name = "menu.html"
+class ProductsView(generic.TemplateView):
+    template_name = "products.html"
 
-class ContactView(generic.TemplateView):
-    template_name = "contact.html"
+class ConceptView(generic.TemplateView):
+    template_name = "concept.html"
+
+class FaqView(generic.TemplateView):
+    template_name = "faq.html"
+
+class ShopView(generic.TemplateView):
+    template_name = "shop.html"
