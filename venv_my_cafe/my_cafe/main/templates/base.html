@@ -1,10 +1,71 @@
+{% load static %}
+
 <!DOCTYPE html>
+
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}{% endblock %}</title>
+    <!--Style-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block head %}{% endblock %}
 </head>
-<body>
 
+<body>
+    <div id="wrapper">
+        <header class="page-header wrapper">
+
+            <nav class="main-nav">
+                <a href="/" class="logo">
+                  <img src="{% static 'img/logo.svg' %}" alt="MyCafe">
+                </a>
+                <li><a href="/">HOME<p>トップページ</p></a></li>
+                <li><a href="{% url 'main:concept' %}">CONCEPT<p>コンセプト</p></a></li>
+                <li><a href="{% url 'main:products' %}">PRODUCTS<p>製品情報</p></a></li>
+                <li><a href="{% url 'main:faq' %}">FAQ<p>よくあるご質問</p></a></li>
+                <li><a href="{% url 'main:shop' %}">SHOP<p>店内情報</p></a></li>
+                <div class="onlineshop-button"><a href="#">ONLINE SHOP</a></div>
+            </nav>
+        </header>
+
+        {% block contents %}{% endblock %}
+
+        <!-- Footer -->
+        <footer class="">
+            <div class="onlineshop-section">
+                <div class="contents-frame">
+                </div>
+            </div>
+            <div class="footer-link">
+                <div>
+                    <ul class="footer-nav">
+                        <li class="">
+                            <a class="" href="">HOME</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="">CONCEPT</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="">PRODUCTS</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="">FAQ</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="">SHOP</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="">ONLINE SHOP</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="">Copyright © Akari organic All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <script></script>
+
+    </div>
 </body>
 </html>

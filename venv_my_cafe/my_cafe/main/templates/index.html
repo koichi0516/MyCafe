@@ -1,39 +1,113 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
 {% load static %}
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>My Cafe</title>
-    <meta name="description" content="テスト">
-    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- CSS -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet"> -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
+{% block title %}{% endblock %}
 
-<body>
-    <div id="home" class="big-bg">
-    <header class="page-header wrapper">
-        <h1><a href="{% url 'main:index' %}"><img class="logo" src="{% static 'img/logo.svg' %}" alt="WCBカフェ ホーム"></a></h1>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="{% url 'main:news' %}">News</a></li>
-                <li><a href="{% url 'main:menu' %}">Menu</a></li>
-                <li><a href="{% url 'main:contact' %}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+{% block contents %}
 
-    <div class="home-content wrapper">
-        <h2 class="page-title">メインタイトル</h2>
-        <p>サブタイトル</p>
-        <a class="button" href="{% url 'main:menu' %}">ボタン</a>
-    </div> <!-- /.home-content -->
-    </div><!-- /#home -->
-</body>
-</html>
+<div class="r page-title">
+    <div class="col-4 title">
+        <p>Concept</p>
+
+    </div>
+</div>
+
+<div class="eyecatch-image">
+</div>
+
+<section id="home-concept">
+    <h1>コンセプト</h1>
+    <p class="title-border">Concept</p>
+    <p class="explain-text">どなたにも安心してお使いいただくため、<br>
+    数万種類以上から選び抜いたスキンケアに有効かつ安全な植物を、<br>
+    自社農園で大事に育てています。<br>
+    <br>
+    植物の栄養をじっくりと熟成させ、<br>
+    一滴一滴丁寧に抽出したエキスから生まれた<br>
+    オーガニックコスメ、<br>
+    「AKARI organic」。<br>
+    <br>
+    あなたの肌を、<br>
+    本来の美しく健康な状態へ導きます。</p>
+    <div class="button-area">
+        <a class="btn-border" href="{% url 'main:concept' %}">
+            <span>Concept</span>
+        </a>
+    </div>
+</section>
+
+<section id="home-about">
+    <h1>MyCafeとは</h1>
+    <p class="title-border">About</p>
+    <div class="r">
+        <div class="col-5">
+            <img src="{% static 'img/menu1.jpg' %}" alt="MyCafe">
+        </div>
+        <div class="col-5">
+            <h3>よくあるご質問</h3>
+            <div class="h3-border"></div>
+            <p class="explain-text">オーガニックコスメはとってもデリケートな商品のため、<br>
+                正しい使い方をしないと効果が半減してしまいます。<br>
+                保管方法で注意すること、使用期限、敏感肌でも安心して使える・・・？<br>
+                製品に関するお客様からのご質問にお答えいたします。</p>
+            <div class="button-area">
+                <a class="btn-border" href="{% url 'main:faq' %}">
+                    <span>FAQ</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="r">
+        <div class="col-5">
+            <h3>オリジナルショップ</h3>
+            <div class="h3-border"></div>
+            <p class="explain-text">AKARI organicオリジナルショップでは、製品をご購入いただける他、<br>
+                オリジナル化粧品を手作りできるアロマバーをご利用いただけます。<br>
+                あなたの肌質やお肌の悩み、お好みの香りに合わせ、
+                <br>世界で一つだけのオリジナルブレンドオイルをおつくりいたします。</p>
+            <div class="button-area">
+                <a class="btn-border" href="{% url 'main:shop' %}">
+                    <span>Shop</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-5">
+            <img src="{% static 'img/menu2.jpg' %}" alt="MyCafe">
+        </div>
+    </div>
+
+</section>
+
+<section id="home-products">
+    <h1>商品一覧</h1>
+    <p class="title-border">products</p>
+    <div class="r">
+        <div class="col-3">
+            <a href="#">
+            <img src="{% static 'img/menu3.jpg' %}" alt="MyCafe">
+            </a>
+            <p class="explain-text">商品A</p>
+        </div>
+        <div class="col-3">
+            <a href="#">
+            <img src="{% static 'img/menu4.jpg' %}" alt="MyCafe">
+            </a>
+            <p class="explain-text">商品A</p>
+        </div>
+        <div class="col-3">
+            <a href="#">
+            <img src="{% static 'img/menu5.jpg' %}" alt="MyCafe">
+            </a>
+            <p class="explain-text">商品A</p>
+        </div>
+    </div>
+    <div class="button-area">
+        <a class="btn-border" href="{% url 'main:products' %}">
+            <span>Products</span>
+        </a>
+    </div>
+</section>
+
+{% endblock %}
